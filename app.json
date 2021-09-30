@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#262724"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,7 +17,10 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +30,22 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "locales": {
+      
+    },
+    "hooks": {
+        "postPublish": [{
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "Crazy bones",
+            "project": "Movir",
+            "authToken": "d9d25063fc714b40a4faf7deb277f5c886bc799ff38744d38f614101966845cf"
+          }
+        }]
+    },
+    "plugins": [
+      "sentry-expo"
+    ]
   }
 }
